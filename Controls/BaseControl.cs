@@ -47,7 +47,7 @@ namespace Ejercicio_4
             this.source = source;
         }
 
-        public IWebElement WebElement
+        protected IWebElement WebElement
         {
             get
             {

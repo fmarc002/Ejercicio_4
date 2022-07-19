@@ -88,16 +88,16 @@ namespace Ejercicio_4
 
             foreach (var opt in expectedOptions)
             {
-                Assert.True(interactions.DropSelect.Options.Any(e => e.Text.Equals(opt)));
+                Assert.Contains(opt,interactions.DropSelect.Options());
             }
 
-            Assert.Equal(interactions.DropSelect.SelectedOption.Text, "Volvo");
-            interactions.DropSelect.SelectByText("Audi");
-            Assert.Equal(interactions.DropSelect.SelectedOption.Text, "Audi");
-            interactions.DropSelect.SelectByValue("saab");
-            Assert.Equal(interactions.DropSelect.SelectedOption.Text, "Saab");
+            Assert.Equal("Volvo", interactions.DropSelect.SelectedOption());
+            interactions.DropSelect.SelectText("Audi");
+            Assert.Equal("Audi", interactions.DropSelect.SelectedOption());
+            interactions.DropSelect.SelectValue("saab");
+            Assert.Equal("Saab",interactions.DropSelect.SelectedOption());
             interactions.DropSelect.SelectByIndex(0);
-            Assert.Equal(interactions.DropSelect.SelectedOption.Text, "Volvo");
+            Assert.Equal("Volvo", interactions.DropSelect.SelectedOption());
 
         }
 

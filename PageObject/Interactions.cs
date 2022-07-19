@@ -14,7 +14,7 @@ namespace Ejercicio_4
             : base(By.XPath(".//*[contains(@class,'page-template-default page page-id-909')]"))
         { }
 
-        public SelectElement DropSelect => new SelectElement(this.Container.FindElement(By.CssSelector(".et_pb_blurb_description select")));
+        public Select DropSelect => this.Container.NewControl<Select>(By.CssSelector(".et_pb_blurb_description select"));
 
 
     }
